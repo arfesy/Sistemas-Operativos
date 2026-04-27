@@ -1,0 +1,11 @@
+print("-------------------------------------------------------")
+print("Ejercicio 13: CONVERSIÓN DE TEMPERATURA.")
+print("-------------------------------------------------------")
+
+celsius = float(input("Ingrese grados Celsius: "))
+
+fahrenheit = (celsius * 9/5) + 32
+
+print("\nSALIDA: ")
+print("-------------------------------------------------------")
+print("Grados Fahrenheit:", fahrenheit)
