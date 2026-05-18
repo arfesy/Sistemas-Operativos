@@ -1,1 +1,162 @@
+print("--- PROMEDIO DE 7 CALIFICACIONES ---")
+suma_calificaciones = 0
 
+for i in range(1, 8):
+    calificacion = float(input(f"Ingrese la calificación {i}: "))
+    suma_calificaciones += calificacion
+
+promedio = suma_calificaciones / 7
+print(f"\nEl promedio final del alumno es: {promedio:.2f}")
+print("--- FILTRAR NÚMEROS POSITIVOS ---")
+numeros_positivos = []
+
+for i in range(1, 11):
+    numero = float(input(f"Ingrese el número {i}: "))
+    if numero > 0:
+        numeros_positivos.append(numero)
+
+print("\nLos números positivos ingresados son:")
+print(numeros_positivos)
+print("--- CONTADOR DE POSITIVOS, NEGATIVOS Y CEROS ---")
+positivos = 0
+negativos = 0
+ceros = 0
+
+for i in range(1, 21):
+    numero = float(input(f"Ingrese el número {i}: "))
+    if numero > 0:
+        positivos += 1
+    elif numero < 0:
+        negativos += 1
+    else:
+        ceros += 1
+
+print(f"\nCantidad de números positivos: {positivos}")
+print(f"Cantidad de números negativos: {negativos}")
+print(f"Cantidad de ceros: {ceros}")
+print("--- CONVERTIR NEGATIVOS A POSITIVOS ---")
+resultados = []
+
+for i in range(1, 16):
+    while True:
+        numero = float(input(f"Ingrese el número negativo {i}: "))
+        if numero < 0:
+            break
+        print("Por favor, ingrese un número que sea estrictamente menor que cero.")
+    
+    positivo = numero * -1
+    resultados.append(positivo)
+
+print("\nLos números convertidos a positivos son:")
+print(resultados)
+print("--- CALIFICACIÓN MÁS ALTA Y MÁS BAJA ---")
+cantidad = int(input("¿Cuántas calificaciones desea ingresar?: "))
+
+if cantidad > 0:
+    calificacion = float(input("Ingrese la calificación 1: "))
+    maxima = calificacion
+    minima = calificacion
+
+    for i in range(2, cantidad + 1):
+        calificacion = float(input(f"Ingrese la calificación {i}: "))
+        if calificacion > maxima:
+            maxima = calificacion
+        if calificacion < minima:
+            minima = calificacion
+
+    print(f"\nLa calificación más alta es: {maxima}")
+    print(f"La calificación más baja es: {minima}")
+else:
+    print("Cantidad no válida.")
+print("--- TABLA DE MULTIPLICAR ---")
+numero = int(input("Ingrese el número para generar su tabla: "))
+
+print(f"\nTabla del {numero}:")
+for i in range(1, 11):
+    producto = numero * i
+    print(f"{numero} x {i} = {producto}")
+import time
+
+print("--- SIMULACIÓN DE RELOJ DIGITAL ---")
+print("Presione Ctrl+C para detener la simulación de las 24 horas.\n")
+
+try:
+    for hora in range(24):
+        for minuto in range(60):
+            for segundo in range(60):
+                # El formato :02d asegura que siempre se muestren dos dígitos
+                print(f"{hora:02d}:{minuto:02d}:{segundo:02d}", end="\r")
+                time.sleep(0.01) # Velocidad acelerada para demostración
+except KeyboardInterrupt:
+    print("\nSimulación interrumpida por el usuario.")
+print("--- CONTROL DE MAYORÍA DE EDAD ---")
+n = int(input("Ingrese la cantidad total de personas (N): "))
+mayores_edad = 0
+
+for i in range(1, n + 1):
+    edad = int(input(f"Ingrese la edad de la persona {i}: "))
+    if edad >= 18:
+        mayores_edad += 1
+
+print(f"\nTotal de personas mayores o iguales a 18 años: {mayores_edad}")
+print("--- PROMEDIO DE EDADES ---")
+cantidad = int(input("¿De cuántas personas calculará el promedio de edad?: "))
+
+if cantidad > 0:
+    suma_edades = 0
+    for i in range(1, cantidad + 1):
+        edad = int(input(f"Ingrese la edad de la persona {i}: "))
+        suma_edades += edad
+
+    promedio = suma_edades / cantidad
+    print(f"\nEl promedio de edad del grupo es: {promedio:.1f} años")
+else:
+    print("Cantidad inválida.")
+print("--- SUMA DE CUADRADOS (1 AL 100) ---")
+suma_cuadrados = 0
+
+for i in range(1, 101):
+    suma_cuadrados += i ** 2
+
+print(f"La suma de los cuadrados de los números del 1 al 100 es: {suma_cuadrados}")
+print("--- SUMA DE NÚMEROS PARES HASTA N ---")
+n = int(input("Ingrese el valor límite superior (N): "))
+suma_pares = 0
+
+for i in range(2, n + 1, 2):
+    suma_pares += i
+
+print(f"La suma de los números pares desde 2 hasta {n} es: {suma_pares}")
+print("--- OPERACIONES CON PARES E IMPARES ---")
+n = int(input("¿Cuántos números enteros va a ingresar?: "))
+
+suma_pares = 0
+suma_impares = 0
+contador_impares = 0
+
+for i in range(1, n + 1):
+    numero = int(input(f"Ingrese el número entero {i}: "))
+    if numero % 2 == 0:
+        suma_pares += numero
+    else:
+        suma_impares += numero
+        contador_impares += 1
+
+print(f"\nSuma total de los números pares: {suma_pares}")
+if contador_impares > 0:
+    promedio_impares = suma_impares / contador_impares
+    print(f"Promedio de los números impares: {promedio_impares:.2f}")
+else:
+    print("No se ingresaron números impares, no se puede calcular su promedio.")
+print("--- CALCULO DE FACTORIAL ---")
+while True:
+    n = int(input("Ingrese un número entero positivo (N): "))
+    if n >= 0:
+        break
+    print("El número debe ser mayor o igual a cero.")
+
+factorial = 1
+for i in range(1, n + 1):
+    factorial *= i
+
+print(f"El factorial de {n} (¡{n}!) es: {factorial}")
